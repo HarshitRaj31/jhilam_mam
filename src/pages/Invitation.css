@@ -1,0 +1,390 @@
+.invitation-page {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  padding: 20px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(178, 205, 169, 0.35),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(230, 177, 151, 0.3),
+      transparent 30%
+    ),
+    #f6f1e8;
+
+  color: #304d3b;
+}
+
+/* Invitation Card */
+
+.invitation-card {
+  width: min(650px, 92vw);
+  height: min(700px, 90vh);
+
+  min-height: 0;
+
+  background: #fffaf1;
+
+  position: relative;
+
+  padding: 55px 60px;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(48, 77, 59, 0.12);
+
+  box-shadow:
+    0 30px 80px rgba(48, 77, 59, 0.14),
+    0 8px 20px rgba(48, 77, 59, 0.06);
+}
+
+/* Inner Border */
+
+.invitation-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 18px;
+
+  border: 1px solid rgba(117, 145, 105, 0.35);
+
+  pointer-events: none;
+}
+
+/* Top Animated Line */
+
+.card-border {
+  position: absolute;
+
+  top: 18px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  height: 1px;
+
+  background: #9aae91;
+
+  width: 65%;
+}
+
+/* Typography */
+
+.invitation-top {
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  color: #7d9475;
+
+  margin-bottom: 20px;
+
+  font-weight: 600;
+}
+
+.invitation-symbol {
+  color: #d39b7b;
+
+  font-size: 24px;
+
+  margin-bottom: 12px;
+}
+
+.invitation-card h1 {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(50px, 8vw, 78px);
+
+  font-weight: 400;
+
+  line-height: 0.85;
+
+  color: #304d3b;
+}
+
+.invitation-card h1 span {
+  display: block;
+
+  font-size: 0.7em;
+
+  margin-top: 10px;
+
+  color: #a26f59;
+
+  font-style: italic;
+}
+
+/* Divider */
+
+.divider {
+  height: 1px;
+
+  background: #d3b8a8;
+
+  margin: 30px 0;
+}
+
+/* Message */
+
+.invitation-message {
+  max-width: 450px;
+
+  font-family: Georgia, serif;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  color: #756c64;
+}
+
+/* Teacher Name */
+
+.invitation-card h2 {
+  font-family: Georgia, serif;
+
+  font-size: 34px;
+
+  font-weight: 500;
+
+  color: #304d3b;
+
+  margin-top: 28px;
+}
+
+.teacher-role {
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  color: #a17868;
+
+  margin-top: 5px;
+}
+
+/* Event Details */
+
+.event-details {
+  display: flex;
+
+  align-items: center;
+
+  gap: 35px;
+
+  margin-top: 35px;
+
+  padding: 18px 30px;
+
+  border-top: 1px solid rgba(48, 77, 59, 0.12);
+
+  border-bottom: 1px solid rgba(48, 77, 59, 0.12);
+}
+
+.event-details div:not(.detail-line) {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.event-details span {
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  color: #8da183;
+}
+
+.event-details strong {
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  color: #304d3b;
+}
+
+.detail-line {
+  height: 30px;
+
+  width: 1px;
+
+  background: #d5c4b9;
+}
+
+/* Button */
+
+.celebrate-button {
+  margin-top: 35px;
+
+  border: none;
+
+  padding: 15px 27px;
+
+  border-radius: 50px;
+
+  background: #304d3b;
+
+  color: #fffaf1;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(48, 77, 59, 0.18);
+
+  transition: background 0.3s ease;
+}
+
+.celebrate-button:hover {
+  background: #45664f;
+}
+
+.celebrate-button span {
+  margin-left: 12px;
+
+  font-size: 17px;
+}
+
+/* Bottom Note */
+
+.bottom-note {
+  margin-top: 22px;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  color: #927d70;
+
+  font-style: italic;
+}
+
+/* Decorative Leaves */
+
+.leaf {
+  position: absolute;
+
+  font-size: 65px;
+
+  opacity: 0.18;
+
+  filter: blur(0.2px);
+
+  pointer-events: none;
+
+  animation: floatLeaf 5s ease-in-out infinite;
+}
+
+.leaf-one {
+  top: 8%;
+  left: 8%;
+
+  transform: rotate(-25deg);
+}
+
+.leaf-two {
+  top: 20%;
+  right: 8%;
+
+  animation-delay: 1s;
+}
+
+.leaf-three {
+  bottom: 10%;
+  left: 7%;
+
+  animation-delay: 2s;
+}
+
+.leaf-four {
+  bottom: 15%;
+  right: 8%;
+
+  animation-delay: 1.5s;
+}
+
+@keyframes floatLeaf {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-20deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(-5deg);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .invitation-page {
+    padding: 12px;
+  }
+
+  .invitation-card {
+    width: 94vw;
+
+    height: 92vh;
+
+    min-height: 0;
+
+    padding: 45px 25px;
+  }
+
+  .invitation-card::before {
+    inset: 12px;
+  }
+
+  .invitation-card h1 {
+    font-size: 48px;
+  }
+
+  .invitation-message {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .invitation-card h2 {
+    font-size: 29px;
+  }
+
+  .event-details {
+    gap: 15px;
+
+    padding: 14px;
+  }
+
+  .event-details strong {
+    font-size: 9px;
+  }
+
+  .leaf {
+    font-size: 40px;
+  }
+}

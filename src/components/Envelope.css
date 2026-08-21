@@ -1,0 +1,338 @@
+.envelope-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(178, 205, 169, 0.38),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(230, 177, 151, 0.28),
+      transparent 32%
+    ),
+    #f7f2e9;
+  color: #304d3b;
+  font-family: "DM Sans", sans-serif;
+}
+
+.green-glow,
+.peach-glow {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(110px);
+  pointer-events: none;
+}
+
+.green-glow {
+  background: rgba(126, 163, 114, 0.18);
+  top: -160px;
+  left: -160px;
+}
+
+.peach-glow {
+  background: rgba(224, 161, 133, 0.16);
+  right: -160px;
+  bottom: -160px;
+}
+
+.envelope-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.invitation-label {
+  margin-bottom: 32px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #718c69;
+  text-transform: uppercase;
+}
+
+.envelope {
+  width: 440px;
+  height: 270px;
+  position: relative;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  overflow: visible;
+  filter: drop-shadow(
+    0 25px 30px rgba(48, 77, 59, 0.18)
+  );
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: #d4e3cd;
+  border-radius: 9px;
+  z-index: 1;
+}
+
+.letter {
+  position: absolute;
+  width: 84%;
+  height: 235px;
+  left: 8%;
+  bottom: 12px;
+  background: #fffaf1;
+  border: 1px solid rgba(48, 77, 59, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow:
+    0 12px 30px rgba(48, 77, 59, 0.15);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.letter span {
+  font-family: "DM Sans", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #7d9674;
+  text-transform: uppercase;
+}
+
+.letter h1 {
+  margin: 10px 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #304d3b;
+}
+
+.letter-line {
+  margin-bottom: 8px;
+  color: #d39b7b;
+  font-size: 20px;
+}
+
+.letter p {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #91796b;
+}
+
+.envelope-left {
+  position: absolute;
+  inset: 0;
+  background: #c7dbc0;
+  clip-path: polygon(
+    0 0,
+    50% 52%,
+    0 100%
+  );
+  border-radius: 9px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.envelope-right {
+  position: absolute;
+  inset: 0;
+  background: #c7dbc0;
+  clip-path: polygon(
+    100% 0,
+    50% 52%,
+    100% 100%
+  );
+  border-radius: 9px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  background: #dce8d5;
+  clip-path: polygon(
+    0 0,
+    50% 54%,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+  border-radius: 9px;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.envelope-flap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #c4d8bc;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 57%
+  );
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  border-radius: 9px;
+  z-index: 8;
+  pointer-events: none;
+}
+
+.envelope.is-open .letter {
+  z-index: 20;
+}
+
+.envelope.is-open .envelope-flap {
+  z-index: 2;
+}
+
+.envelope.is-open .envelope-front {
+  z-index: 4;
+}
+
+.envelope.is-open .envelope-left,
+.envelope.is-open .envelope-right {
+  z-index: 4;
+}
+
+.wax-seal {
+  position: absolute;
+
+  width: 62px;
+  height: 62px;
+
+  left: 50%;
+  top: 46%;
+
+  margin-left: -31px;
+  margin-top: -31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #d39b7b;
+
+  border: 5px solid #ead5c9;
+
+  color: #fffaf1;
+
+  font-family: Georgia, serif;
+
+  font-size: 22px;
+
+  z-index: 15;
+
+  box-shadow:
+    0 8px 20px rgba(80, 55, 43, 0.22);
+}
+.open-area {
+  margin-top: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.open-button {
+  border: none;
+  outline: none;
+  padding: 15px 28px;
+  border-radius: 999px;
+  background: #304d3b;
+  color: #fffaf1;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow:
+    0 10px 25px rgba(48, 77, 59, 0.18);
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.open-button:hover {
+  background: #45664f;
+  box-shadow:
+    0 14px 30px rgba(48, 77, 59, 0.22);
+}
+
+.open-button span {
+  margin-left: 12px;
+  font-size: 17px;
+}
+
+.hint {
+  margin-top: 14px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  color: #927c6d;
+  letter-spacing: 0.3px;
+}
+
+.opening-message {
+  margin-top: 42px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 19px;
+  font-style: italic;
+  color: #927c6d;
+}
+
+@media (max-width: 600px) {
+  .invitation-label {
+    margin-bottom: 25px;
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .envelope {
+    width: 330px;
+    height: 205px;
+  }
+
+  .letter {
+    height: 180px;
+  }
+
+  .letter h1 {
+    font-size: 30px;
+  }
+
+  .letter p {
+    font-size: 14px;
+  }
+
+  .wax-seal {
+    width: 52px;
+    height: 52px;
+    font-size: 18px;
+  }
+
+  .open-area {
+    margin-top: 32px;
+  }
+}
