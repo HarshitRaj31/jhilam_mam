@@ -125,6 +125,10 @@ function Invitation() {
             <span>OCCASION</span>
             <strong>TEACHER'S DAY</strong>
           </div>
+          <div>
+            <span>VENUE</span>
+            <strong>ROOM NO. 4201</strong>
+          </div>
         </motion.div>
 
         
@@ -135,7 +139,7 @@ function Invitation() {
           animate={{ opacity: 1 }}
           transition={{ delay: 2.4 }}
         >
-          Created with gratitude & love 🌿
+          Embrace us with your presence 🌿
         </motion.p>
       </motion.div>
     </main>
