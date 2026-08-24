@@ -125,6 +125,7 @@ function Invitation() {
             <span>OCCASION</span>
             <strong>TEACHER'S DAY</strong>
           </div>
+          <div className="detail-line"></div>
           <div>
             <span>VENUE</span>
             <strong>ROOM NO. 4201</strong>
