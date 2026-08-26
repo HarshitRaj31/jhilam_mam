@@ -12,46 +12,59 @@ function Envelope() {
 
     setOpened(true);
 
-    // Let the complete envelope animation finish
     setTimeout(() => {
       navigate("/invitation");
     }, 2200);
   };
 
   return (
-    <section className="envelope-page">
-      {/* Background glow */}
-      <div className="green-glow"></div>
-      <div className="peach-glow"></div>
+    <main className="envelope-page">
+      <div className="coffee-glow coffee-glow-one"></div>
+      <div className="coffee-glow coffee-glow-two"></div>
+
+      <div className="python-code code-one">print()</div>
+      <div className="python-code code-two">{"{ }"}</div>
+      <div className="python-code code-three">def()</div>
+      <div className="python-code code-four">&gt;&gt;&gt;</div>
+
+      <div className="network-line network-one"></div>
+      <div className="network-line network-two"></div>
 
       <motion.div
         className="envelope-content"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        initial={{
+          opacity: 0,
+          y: 30,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 0.8,
+        }}
       >
-        {/* Heading */}
         <motion.p
           className="invitation-label"
-          initial={{ opacity: 0, y: -15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
+          initial={{
+            opacity: 0,
+            y: -15,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            delay: 0.3,
+          }}
         >
           A SPECIAL INVITATION
         </motion.p>
-
-        {/* =========================
-            ENVELOPE
-        ========================= */}
 
         <div
           className={`envelope ${opened ? "is-open" : ""}`}
           onClick={handleOpen}
         >
-          {/* =========================
-              LETTER
-          ========================= */}
-
           <motion.div
             className="letter"
             initial={{
@@ -79,7 +92,9 @@ function Envelope() {
 
             <h1>For Jhilam Ma'am</h1>
 
-            <div className="letter-line">✦</div>
+            <div className="letter-line">
+              {"{ }"}
+            </div>
 
             <p>
               With gratitude,
@@ -88,24 +103,13 @@ function Envelope() {
             </p>
           </motion.div>
 
-          {/* =========================
-              ENVELOPE BACK
-          ========================= */}
-
           <div className="envelope-back"></div>
 
-          {/* Left fold */}
           <div className="envelope-left"></div>
 
-          {/* Right fold */}
           <div className="envelope-right"></div>
 
-          {/* Front pocket */}
           <div className="envelope-front"></div>
-
-          {/* =========================
-              ENVELOPE FLAP
-          ========================= */}
 
           <motion.div
             className="envelope-flap"
@@ -123,10 +127,6 @@ function Envelope() {
               ease: [0.22, 1, 0.36, 1],
             }}
           />
-
-          {/* =========================
-              WAX SEAL
-          ========================= */}
 
           <AnimatePresence>
             {!opened && (
@@ -150,15 +150,11 @@ function Envelope() {
                   damping: 15,
                 }}
               >
-                ✦
+                {"{ }"}
               </motion.div>
             )}
           </AnimatePresence>
         </div>
-
-        {/* =========================
-            OPEN BUTTON
-        ========================= */}
 
         <AnimatePresence mode="wait">
           {!opened ? (
@@ -174,8 +170,6 @@ function Envelope() {
                 opacity: 0,
               }}
             >
-            
-
               <p className="hint">
                 Click the envelope to reveal your invitation
               </p>
@@ -192,12 +186,12 @@ function Envelope() {
                 y: 0,
               }}
             >
-              A little surprise, specially created for you 🌿
+              A little surprise, specially created for you 
             </motion.p>
           )}
         </AnimatePresence>
       </motion.div>
-    </section>
+    </main>
   );
 }
 
